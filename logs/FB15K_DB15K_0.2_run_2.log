@@ -1,0 +1,67 @@
+C:\Users\A\Documents\GitHub\SimDiff\src\utils.py:48: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_new.cpp:656.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+loading raw data...
+total ent num: 27793, rel num: 1624
+94.56% entities have images
+image feature shape: torch.Size([27793, 4096])
+#left entity : 14951, #right entity: 12842
+#left entity not in train set: 14939, #right entity not in train set: 12830
+relation feature shape: torch.Size([27793, 1000])
+attribute feature shape: torch.Size([27793, 1000])
+getting a sparse tensor r_adj...
+total params num 10308466
+model details:
+GAT(
+  (layer_stack): ModuleList(
+    (0-1): 2 x MultiHeadGraphAttention (300 -> 300) * 2 heads
+  )
+)
+optimiser details:
+AdamW (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    decoupled_weight_decay: True
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0005
+    maximize: False
+    weight_decay: 0.01
+)
+-----dataset summary-----
+dataset:	 C:/Users/A/Documents/GitHub/data/mmkg/FB15K_DB15K
+triple num:	 691241
+entity num:	 27793
+relation num:	 1624
+train ill num:	 12 	test ill num:	 12834
+-------------------------
+Namespace(file_dir='C:/Users/A/Documents/GitHub/data/mmkg/FB15K_DB15K', rate=0.001, cuda=True, device='cuda:0', seed=39, epochs=500, check_point=50, hidden_units='300,300,300', heads='2,2', instance_normalization=False, lr=0.0005, weight_decay=0, dropout=0.0, attn_dropout=0.0, dist=2, csls=True, csls_k=3, il=True, semi_learn_step=5, il_start=500, bsize=3500, unsup=False, unsup_mode='name', unsup_k=1000, lta_split=0, tau=0.1, alpha=0.2, with_weight=1, structure_encoder='gat', ab_weight=0.5, projection=False, attr_dim=300, img_dim=300, name_dim=300, char_dim=300, diff_dim=64, num_layer=4, w_gcn=True, w_rel=True, w_attr=True, w_name=False, w_char=False, w_img=True, inner_view_num=6, word_embedding='glove', use_project_head=False, zoom=0.1, reduction='mean', save_path='save_pkl', scale=0.2, num_aug=2)
+[start training...] 
+(T):   0%|          | 0/500 [00:00<?, ?it/s](T):   0%|          | 0/500 [00:00<?, ?it/s, loss=22.6](T):   0%|          | 1/500 [00:00<05:13,  1.59it/s, loss=22.6](T):   0%|          | 1/500 [00:23<05:13,  1.59it/s, loss=21.4](T):   0%|          | 2/500 [00:23<1:55:07, 13.87s/it, loss=21.4](T):   0%|          | 2/500 [00:37<1:55:07, 13.87s/it, loss=20.3](T):   1%|          | 3/500 [00:37<1:55:08, 13.90s/it, loss=20.3](T):   1%|          | 3/500 [01:00<1:55:08, 13.90s/it, loss=19.3](T):   1%|          | 4/500 [01:00<2:25:20, 17.58s/it, loss=19.3](T):   1%|          | 4/500 [01:14<2:25:20, 17.58s/it, loss=18.4](T):   1%|          | 5/500 [01:14<2:14:23, 16.29s/it, loss=18.4](T):   1%|          | 5/500 [01:38<2:14:23, 16.29s/it, loss=17.6](T):   1%|          | 6/500 [01:38<2:33:33, 18.65s/it, loss=17.6](T):   1%|          | 6/500 [01:52<2:33:33, 18.65s/it, loss=16.9](T):   1%|¨‡         | 7/500 [01:52<2:20:38, 17.12s/it, loss=16.9](T):   1%|¨‡         | 7/500 [02:03<2:20:38, 17.12s/it, loss=16.3](T):   2%|¨‡         | 8/500 [02:03<2:05:35, 15.32s/it, loss=16.3](T):   2%|¨‡         | 8/500 [02:06<2:05:35, 15.32s/it, loss=15.7](T):   2%|¨‡         | 9/500 [02:06<1:32:28, 11.30s/it, loss=15.7](T):   2%|¨‡         | 9/500 [02:39<1:32:28, 11.30s/it, loss=15.3](T):   2%|¨‡         | 10/500 [02:39<2:27:58, 18.12s/it, loss=15.3](T):   2%|¨‡         | 10/500 [02:41<2:27:58, 18.12s/it, loss=14.9](T):   2%|¨‡         | 11/500 [02:41<1:47:18, 13.17s/it, loss=14.9](T):   2%|¨‡         | 11/500 [03:14<1:47:18, 13.17s/it, loss=14.6](T):   2%|¨‡         | 12/500 [03:14<2:37:00, 19.30s/it, loss=14.6](T):   2%|¨‡         | 12/500 [03:17<2:37:00, 19.30s/it, loss=14.4](T):   3%|¨†         | 13/500 [03:17<1:55:07, 14.18s/it, loss=14.4](T):   3%|¨†         | 13/500 [03:50<1:55:07, 14.18s/it, loss=14.2](T):   3%|¨†         | 14/500 [03:50<2:41:43, 19.97s/it, loss=14.2](T):   3%|¨†         | 14/500 [03:53<2:41:43, 19.97s/it, loss=14]  (T):   3%|¨†         | 15/500 [03:53<1:59:46, 14.82s/it, loss=14](T):   3%|¨†         | 15/500 [04:15<1:59:46, 14.82s/it, loss=13.8](T):   3%|¨†         | 16/500 [04:15<2:16:56, 16.98s/it, loss=13.8](T):   3%|¨†         | 16/500 [04:17<2:16:56, 16.98s/it, loss=13.7](T):   3%|¨†         | 17/500 [04:17<1:41:14, 12.58s/it, loss=13.7](T):   3%|¨†         | 17/500 [04:51<1:41:14, 12.58s/it, loss=13.6](T):   4%|¨†         | 18/500 [04:51<2:31:53, 18.91s/it, loss=13.6](T):   4%|¨†         | 18/500 [04:53<2:31:53, 18.91s/it, loss=13.5](T):   4%|¨…         | 19/500 [04:53<1:51:03, 13.85s/it, loss=13.5](T):   4%|¨…         | 19/500 [05:26<1:51:03, 13.85s/it, loss=13.4](T):   4%|¨…         | 20/500 [05:26<2:38:15, 19.78s/it, loss=13.4](T):   4%|¨…         | 20/500 [05:29<2:38:15, 19.78s/it, loss=13.3](T):   4%|¨…         | 21/500 [05:29<1:56:23, 14.58s/it, loss=13.3](T):   4%|¨…         | 21/500 [06:03<1:56:23, 14.58s/it, loss=13.2](T):   4%|¨…         | 22/500 [06:03<2:41:37, 20.29s/it, loss=13.2](T):   4%|¨…         | 22/500 [06:05<2:41:37, 20.29s/it, loss=13.1](T):   5%|¨…         | 23/500 [06:05<1:59:51, 15.08s/it, loss=13.1](T):   5%|¨…         | 23/500 [06:27<1:59:51, 15.08s/it, loss=13.1](T):   5%|¨…         | 24/500 [06:27<2:15:46, 17.11s/it, loss=13.1](T):   5%|¨…         | 24/500 [06:30<2:15:46, 17.11s/it, loss=13]  (T):   5%|¨„         | 25/500 [06:30<1:40:39, 12.71s/it, loss=13](T):   5%|¨„         | 25/500 [07:03<1:40:39, 12.71s/it, loss=12.9](T):   5%|¨„         | 26/500 [07:03<2:28:54, 18.85s/it, loss=12.9](T):   5%|¨„         | 26/500 [07:05<2:28:54, 18.85s/it, loss=12.8](T):   5%|¨„         | 27/500 [07:05<1:48:54, 13.81s/it, loss=12.8](T):   5%|¨„         | 27/500 [07:38<1:48:54, 13.81s/it, loss=12.8](T):   6%|¨„         | 28/500 [07:38<2:34:23, 19.63s/it, loss=12.8](T):   6%|¨„         | 28/500 [07:41<2:34:23, 19.63s/it, loss=12.7](T):   6%|¨„         | 29/500 [07:41<1:53:59, 14.52s/it, loss=12.7](T):   6%|¨„         | 29/500 [08:14<1:53:59, 14.52s/it, loss=12.6](T):   6%|¨„         | 30/500 [08:14<2:37:33, 20.11s/it, loss=12.6](T):   6%|¨„         | 30/500 [08:17<2:37:33, 20.11s/it, loss=12.5](T):   6%|¨„         | 31/500 [08:17<1:57:03, 14.98s/it, loss=12.5](T):   6%|¨„         | 31/500 [08:38<1:57:03, 14.98s/it, loss=12.5](T):   6%|¨ƒ         | 32/500 [08:38<2:11:59, 16.92s/it, loss=12.5](T):   6%|¨ƒ         | 32/500 [08:41<2:11:59, 16.92s/it, loss=12.4](T):   7%|¨ƒ         | 33/500 [08:41<1:37:45, 12.56s/it, loss=12.4](T):   7%|¨ƒ         | 33/500 [09:14<1:37:45, 12.56s/it, loss=12.3](T):   7%|¨ƒ         | 34/500 [09:14<2:25:39, 18.75s/it, loss=12.3](T):   7%|¨ƒ         | 34/500 [09:16<2:25:39, 18.75s/it, loss=12.3](T):   7%|¨ƒ         | 35/500 [09:16<1:46:37, 13.76s/it, loss=12.3](T):   7%|¨ƒ         | 35/500 [09:52<1:46:37, 13.76s/it, loss=12.2](T):   7%|¨ƒ         | 36/500 [09:52<2:37:36, 20.38s/it, loss=12.2](T):   7%|¨ƒ         | 36/500 [09:54<2:37:36, 20.38s/it, loss=12.1](T):   7%|¨ƒ         | 37/500 [09:54<1:55:48, 15.01s/it, loss=12.1](T):   7%|¨ƒ         | 37/500 [10:14<2:08:13, 16.62s/it, loss=12.1]
+Traceback (most recent call last):
+  File "C:\Users\A\Documents\GitHub\SimDiff\src\run_diff.py", line 732, in <module>
+    model.train()
+  File "C:\Users\A\Documents\GitHub\SimDiff\src\run_diff.py", line 452, in train
+    name_emb, char_emb, topo_emb, sema_emb, joint_emb = self.multimodal_encoder(self.input_idx,
+  File "C:\Users\A\miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\A\miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\A\Documents\GitHub\SimDiff\src\models.py", line 224, in forward
+    gph_emb = self.cross_graph_model(self.entity_emb(input_idx), adj)
+  File "C:\Users\A\miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\A\miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\A\Documents\GitHub\SimDiff\src\models.py", line 42, in forward
+    x = gat_layer(x, adj)
+  File "C:\Users\A\miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\A\miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\A\Documents\GitHub\SimDiff\src\layers.py", line 95, in forward
+    e_rowsum = self.special_spmm(edge, edge_e, torch.Size([N, N]), torch.ones(size=(N, 1)).to(args.device) if next(
+KeyboardInterrupt

@@ -1,12 +1,12 @@
 
-CUDA_VISIBLE_DEVICES=$1 python3 src/run_diff.py \
-    --file_dir  /export/data/rli/Project/MMKG/MCLEA/data/mmkb-datasets/$3 \
+CUDA_VISIBLE_DEVICES=$1 python src/run_diff.py \
+    --file_dir  C:/Users/A/Documents/GitHub/data/mmkg/$3 \
     --device $6\
     --scale $5 \
     --num_aug $7\
     --rate $4 \
     --lr .0005 \
-    --epochs 1000 \
+    --epochs 500 \
     --hidden_units "300,300,300" \
     --check_point 100  \
     --bsize 3500 \

@@ -39,7 +39,7 @@ def load_img_features(ent_num, file_dir):
         img_vec_path = "data/pkls/dbpedia_wikidata_15k_dense_GA_id_img_feature_dict.pkl"
     elif "FB15K" in file_dir:
         filename = os.path.split(file_dir)[-1].upper()
-        img_vec_path =  "data/mmkb-datasets/" + filename + "/" + filename + "_id_img_feature_dict.pkl"
+        img_vec_path =  "C:/Users/A/Documents/GitHub/data/mmkg/" + filename + "/" + filename + "_id_img_feature_dict.pkl"
     else:
         split = file_dir.split("/")[-1]
         img_vec_path = "data/pkls/" + split + "_GA_id_img_feature_dict.pkl"
