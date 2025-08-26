@@ -18,7 +18,7 @@ experiments=(
 )
 
 # Number of repetitions per experiment
-num_repeats=5
+num_repeats=1
 
 # Directory for logs
 log_dir="logs"
@@ -48,10 +48,10 @@ for exp in "${experiments[@]}"; do
             --lr .0005 \
             --epochs 500 \
             --hidden_units "300,300,300" \
-            --check_point 500 \
+            --check_point 10 \
             --bsize 3500 \
             --il \
-            --il_start 500 \
+            --il_start 0 \
             --semi_learn_step 5 \
             --csls \
             --csls_k 3 \
